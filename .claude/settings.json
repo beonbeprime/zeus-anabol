@@ -10,6 +10,28 @@
           }
         ]
       }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"const d=JSON.parse(require('fs').readFileSync('/dev/stdin','utf8')); if(d.tool_input&&d.tool_input.command){const line=new Date().toISOString()+' | '+d.tool_input.command+'\\n'; require('fs').appendFileSync('memory/command-log.txt',line);}\" "
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Antes de encerrar, verifique: (1) A tarefa solicitada foi completada integralmente? (2) Ha passos pendentes ou parcialmente feitos? (3) Algum arquivo foi prometido mas nao criado? (4) Alguma URL foi mencionada mas nao verificada? Se qualquer item estiver incompleto, continue trabalhando sem declarar encerrado.",
+            "timeout": 30
+          }
+        ]
+      }
     ]
   }
 }
