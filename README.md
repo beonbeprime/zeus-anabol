@@ -41,13 +41,15 @@ Cada agente tem papel, ferramentas e criterios de saida proprios:
 - Gate de entrega: verifica antes de afirmar
 - Aprendizado automatico: registra e nao repete erros
 
-### 3 MCPs prontos para conectar
-O arquivo `.mcp.json` ja deixa tres conexoes configuradas. Ao abrir o Claude Code
+### MCPs prontos para conectar
+O arquivo `.mcp.json` ja deixa as conexoes configuradas. Ao abrir o Claude Code
 na pasta, ele pergunta se quer ativar os MCPs do projeto. Voce confirma e faz login
 no navegador. Sem token manual, sem configuracao.
 - Whimsical: cria mapa mental e fluxograma das suas ideias
 - Supabase: o banco que guarda seus leads, vendas e clientes
 - Notion: tudo que voce fala vira nota e pagina organizada (para quem usa)
+- ElevenLabs: transforma texto em voz humana e clona a sua voz (roda local via uvx,
+  precisa de uv instalado e da ELEVENLABS_API_KEY no ambiente). Use `/mcps` para o passo a passo.
 
 ### Onboarding interativo
 7 perguntas que geram o CLAUDE.md com sua identidade personalizada.
