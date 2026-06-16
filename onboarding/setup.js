@@ -254,8 +254,27 @@ Se o mesmo tipo de erro acontecer 2 vezes: criar regra dedicada para nunca mais 
   console.log('  2. O ' + nomeClaudeClean + ' ja vai responder com sua personalidade');
   console.log('  3. Fale com ele como parceiro, nao como ferramenta');
   console.log('');
+  linha('-');
+  console.log('');
+  console.log('  CONECTE AS 3 SUPER-MAOS (MCPs)');
+  console.log('');
+  console.log('  Ja deixei tudo pronto no arquivo .mcp.json. Quando voce abrir');
+  console.log('  o Claude Code nesta pasta, ele pergunta se quer ativar os MCPs');
+  console.log('  do projeto. Responda que SIM e faca login no navegador. So isso.');
+  console.log('');
+  console.log('  - Whimsical: cria mapa mental e fluxograma das suas ideias');
+  console.log('  - Supabase:  o banco que guarda seus leads, vendas e clientes');
+  console.log('  - Notion:    tudo que voce fala vira nota e pagina organizada');
+  console.log('');
+  console.log('  Se ele nao perguntar, rode estes comandos no terminal:');
+  console.log('    claude mcp add whimsical --transport http https://mcp.whimsical.com/mcp');
+  console.log('    claude mcp add supabase  --transport http https://mcp.supabase.com/mcp');
+  console.log('    claude mcp add notion    --transport http https://mcp.notion.com/mcp');
+  console.log('');
+  console.log('  Cada um pede um login no navegador na primeira vez. Sem token, sem dor.');
+  console.log('');
   linha('=');
-  console.log('  github.com/allyssonsilveira/zeus-anabol');
+  console.log('  github.com/beonbeprime/zeus-anabol');
   linha('=');
   console.log('');
 
