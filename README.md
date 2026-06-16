@@ -43,13 +43,23 @@ Cada agente tem papel, ferramentas e criterios de saida proprios:
 
 ### MCPs prontos para conectar
 O arquivo `.mcp.json` ja deixa as conexoes configuradas. Ao abrir o Claude Code
-na pasta, ele pergunta se quer ativar os MCPs do projeto. Voce confirma e faz login
-no navegador. Sem token manual, sem configuracao.
+na pasta, ele pergunta se quer ativar os MCPs do projeto. Os remotos so pedem um
+login no navegador. Use `/mcps` para o passo a passo de cada um.
+
+Dados e pesquisa:
+- Windsor.ai: puxa metrica de 325+ plataformas (Instagram, Meta Ads, Google, TikTok) em texto
+- Apify: espia concorrente e coleta dados de 5.000+ fontes (precisa do APIFY_TOKEN)
+
+Criacao com IA:
+- Canva: gera a arte do post direto, sem abrir o programa
+- Replicate: cria imagem com IA para criativo e thumbnail
+- Runway: faz reel cinematografico em video
+- ElevenLabs: transforma texto em voz humana e clona a sua voz (roda local via uvx, precisa de uv e da ELEVENLABS_API_KEY)
+
+Organizacao:
 - Whimsical: cria mapa mental e fluxograma das suas ideias
 - Supabase: o banco que guarda seus leads, vendas e clientes
 - Notion: tudo que voce fala vira nota e pagina organizada (para quem usa)
-- ElevenLabs: transforma texto em voz humana e clona a sua voz (roda local via uvx,
-  precisa de uv instalado e da ELEVENLABS_API_KEY no ambiente). Use `/mcps` para o passo a passo.
 
 ### Onboarding interativo
 7 perguntas que geram o CLAUDE.md com sua identidade personalizada.
