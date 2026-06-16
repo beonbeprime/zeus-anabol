@@ -52,7 +52,7 @@ Conhece seu tom de voz, seu negocio, suas preferencias.
 
 ```bash
 # 1. Clone o repositorio
-git clone https://github.com/allyssonsilveira/zeus-anabol
+git clone https://github.com/beonbeprime/zeus-anabol
 cd zeus-anabol
 
 # 2. Rode o onboarding interativo
@@ -112,3 +112,4 @@ entre 12 e 16 de junho de 2026:
 ---
 
 **Fabrica de Mentores | zeus.fabricadementores.com**
+github.com/beonbeprime/zeus-anabol
