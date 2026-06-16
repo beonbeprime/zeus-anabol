@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zeus Anabol — Aula Magna | 16 jun 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --preto: #0a0a0a;
+      --preto2: #111111;
+      --card: #161616;
+      --borda: #222222;
+      --rg1: #c9a96e;
+      --rg2: #e8c98a;
+      --rg3: #f5dfa8;
+      --branco: #f5f5f0;
+      --cinza: #888888;
+      --cinza2: #555555;
+      --verde: #4ade80;
+    }
+
+    html, body {
+      min-height: 100vh;
+      background: var(--preto);
+      color: var(--branco);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* grain */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.025;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    /* topo */
+    .topo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 72px;
+    }
+    .pill {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--rg1);
+      background: rgba(201,169,110,0.08);
+      border: 1px solid rgba(201,169,110,0.25);
+      padding: 5px 14px;
+      border-radius: 100px;
+    }
+    .pill-data {
+      font-size: 11px;
+      color: var(--cinza);
+      letter-spacing: 0.08em;
+    }
+
+    /* headline */
+    .headline {
+      font-size: clamp(38px, 6vw, 64px);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+    }
+    .headline em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--rg1), var(--rg2), var(--rg3));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      padding-right: 0.1em;
+      margin-right: -0.1em;
+    }
+
+    .sub {
+      font-size: 18px;
+      color: var(--cinza);
+      line-height: 1.6;
+      max-width: 600px;
+      margin-bottom: 56px;
+      font-weight: 400;
+    }
+
+    /* countdown */
+    .countdown-wrap {
+      background: var(--card);
+      border: 1px solid var(--borda);
+      border-radius: 16px;
+      padding: 36px 40px;
+      margin-bottom: 56px;
+    }
+    .countdown-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cinza);
+      margin-bottom: 20px;
+    }
+    .countdown {
+      display: flex;
+      align-items: flex-end;
+      gap: 4px;
+    }
+    .cd-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 72px;
+    }
+    .cd-num {
+      font-size: clamp(40px, 6vw, 64px);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--rg1), var(--rg2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      padding-right: 0.08em;
+      margin-right: -0.08em;
+    }
+    .cd-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cinza2);
+      margin-top: 6px;
+    }
+    .cd-sep {
+      font-size: 48px;
+      font-weight: 900;
+      color: var(--borda);
+      line-height: 1;
+      padding-bottom: 18px;
+      margin: 0 -2px;
+    }
+    .ao-vivo {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 20px;
+      font-size: 12px;
+      color: var(--verde);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+    .dot-verde {
+      width: 8px;
+      height: 8px;
+      background: var(--verde);
+      border-radius: 50%;
+      animation: pulsar 1.4s ease-in-out infinite;
+    }
+    @keyframes pulsar {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.7); }
+    }
+    .aula-comecou {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--verde);
+      display: none;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* o que voce vai receber */
+    .section-title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cinza);
+      margin-bottom: 24px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--borda);
+      border-radius: 12px;
+      padding: 24px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .card:hover {
+      border-color: rgba(201,169,110,0.35);
+      transform: translateY(-2px);
+    }
+    .card-icon {
+      font-size: 28px;
+      margin-bottom: 14px;
+    }
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--branco);
+      margin-bottom: 8px;
+    }
+    .card-desc {
+      font-size: 13px;
+      color: var(--cinza);
+      line-height: 1.6;
+    }
+
+    /* repo */
+    .repo-section {
+      background: var(--card);
+      border: 1px solid var(--borda);
+      border-radius: 16px;
+      padding: 36px 40px;
+      margin-bottom: 48px;
+    }
+    .repo-url {
+      font-family: 'Courier New', monospace;
+      font-size: 15px;
+      color: var(--rg2);
+      background: rgba(201,169,110,0.06);
+      border: 1px solid rgba(201,169,110,0.18);
+      padding: 14px 20px;
+      border-radius: 10px;
+      margin: 16px 0 20px;
+      word-break: break-all;
+      letter-spacing: 0.02em;
+    }
+    .btn-copiar {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--rg1), var(--rg2));
+      color: #0a0a0a;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      padding: 14px 28px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    .btn-copiar:hover { opacity: 0.9; transform: translateY(-1px); }
+    .btn-copiar:active { transform: translateY(0); }
+    .btn-copiar.copiado {
+      background: var(--verde);
+    }
+    .btn-copiar svg { width: 16px; height: 16px; }
+
+    /* passos */
+    .passos {
+      counter-reset: passo;
+      list-style: none;
+      margin-bottom: 56px;
+    }
+    .passos li {
+      counter-increment: passo;
+      display: flex;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--borda);
+    }
+    .passos li:last-child { border-bottom: none; }
+    .passo-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(201,169,110,0.1);
+      border: 1px solid rgba(201,169,110,0.3);
+      color: var(--rg2);
+      font-size: 13px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .passo-texto strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--branco);
+      margin-bottom: 4px;
+    }
+    .passo-texto span {
+      font-size: 13px;
+      color: var(--cinza);
+      line-height: 1.6;
+    }
+    .passo-texto code {
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      background: rgba(255,255,255,0.06);
+      padding: 2px 8px;
+      border-radius: 4px;
+      color: var(--rg3);
+    }
+
+    /* rodape */
+    .rodape {
+      border-top: 1px solid var(--borda);
+      padding-top: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .rodape-marca {
+      font-size: 13px;
+      color: var(--cinza2);
+    }
+    .rodape-marca strong {
+      color: var(--rg1);
+    }
+
+    @media (max-width: 600px) {
+      .wrap { padding: 40px 16px 60px; }
+      .countdown-wrap, .repo-section { padding: 28px 20px; }
+      .cd-block { min-width: 56px; }
+      .cd-sep { font-size: 36px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- topo -->
+  <div class="topo">
+    <span class="pill">Fabrica de Mentores</span>
+    <span class="pill-data">Terça, 16 jun 2026 · 20h40</span>
+  </div>
+
+  <!-- headline -->
+  <h1 class="headline">
+    Seu Claude Code<br>acabou de <em>ganhar superpoderes</em>
+  </h1>
+  <p class="sub">
+    Esta aula mostra o zeus-anabol: o repositorio que anaboliza o Claude Code
+    de qualquer mentorado com as mesmas capacidades do Zeus do Allysson.
+  </p>
+
+  <!-- countdown -->
+  <div class="countdown-wrap">
+    <div class="countdown-label">A aula comeca em</div>
+    <div class="countdown" id="countdown">
+      <div class="cd-block">
+        <span class="cd-num" id="horas">00</span>
+        <span class="cd-label">horas</span>
+      </div>
+      <span class="cd-sep">:</span>
+      <div class="cd-block">
+        <span class="cd-num" id="minutos">00</span>
+        <span class="cd-label">min</span>
+      </div>
+      <span class="cd-sep">:</span>
+      <div class="cd-block">
+        <span class="cd-num" id="segundos">00</span>
+        <span class="cd-label">seg</span>
+      </div>
+    </div>
+    <div class="ao-vivo" id="ao-vivo" style="display:none;">
+      <span class="dot-verde"></span>
+      AO VIVO AGORA
+    </div>
+    <div class="aula-comecou" id="aula-comecou" style="display:none;">
+      Aula em andamento. Acesse o Zoom agora.
+    </div>
+  </div>
+
+  <!-- cards do que tem no repo -->
+  <div class="section-title">O que o zeus-anabol instala</div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">🧠</div>
+      <div class="card-title">Personalidade com identidade propria</div>
+      <div class="card-desc">Voce da um nome, um estilo, uma area de foco. Ele para de ser generico e vira o seu parceiro.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🚫</div>
+      <div class="card-title">Anti-lisonja ativo</div>
+      <div class="card-desc">Nao valida ideia fraca. Nao concorda por pressao. Fala o que voce nao quer ouvir quando precisa.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">⚡</div>
+      <div class="card-title">Autonomia total</div>
+      <div class="card-desc">Quando voce diz "faz": ele faz. Sem confirmacao em loop. Avisa depois, nao antes.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔒</div>
+      <div class="card-title">Gate de seguranca</div>
+      <div class="card-desc">Bloqueia automaticamente operacoes destrutivas e URLs financeiras sem autorizacao.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📦</div>
+      <div class="card-title">FULLSAFE versionamento</div>
+      <div class="card-desc">Antes de editar qualquer arquivo, cria copia de seguranca. Se der errado, rollback imediato.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📚</div>
+      <div class="card-title">Aprendizado continuo</div>
+      <div class="card-desc">Cada erro vira uma regra. Sessao a sessao fica mais inteligente sobre voce e seu negocio.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🗂️</div>
+      <div class="card-title">Memoria persistente</div>
+      <div class="card-desc">Lembra do que importa entre as sessoes. Tom de voz, negocios, preferencias, decisoes.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">✅</div>
+      <div class="card-title">Gate de entrega</div>
+      <div class="card-desc">Nunca entrega URL sem verificar. Nunca afirma que funciona sem ter testado.</div>
+    </div>
+  </div>
+
+  <!-- repo -->
+  <div class="repo-section">
+    <div class="section-title">Repositorio oficial</div>
+    <div class="repo-url" id="repo-url">
+      https://github.com/allyssonsilveira/zeus-anabol
+    </div>
+    <button class="btn-copiar" id="btn-copiar" onclick="copiarLink()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <rect x="9" y="9" width="13" height="13" rx="2"/>
+        <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+      </svg>
+      Copiar link do repositorio
+    </button>
+  </div>
+
+  <!-- passos -->
+  <div class="section-title">Como instalar (5 minutos)</div>
+  <ul class="passos">
+    <li>
+      <div class="passo-num">1</div>
+      <div class="passo-texto">
+        <strong>Clone o repositorio</strong>
+        <span>No terminal, rode: <code>git clone https://github.com/allyssonsilveira/zeus-anabol</code></span>
+      </div>
+    </li>
+    <li>
+      <div class="passo-num">2</div>
+      <div class="passo-texto">
+        <strong>Entre na pasta</strong>
+        <span><code>cd zeus-anabol</code></span>
+      </div>
+    </li>
+    <li>
+      <div class="passo-num">3</div>
+      <div class="passo-texto">
+        <strong>Rode o onboarding interativo</strong>
+        <span><code>node onboarding/setup.js</code> — responde 7 perguntas e gera sua personalidade</span>
+      </div>
+    </li>
+    <li>
+      <div class="passo-num">4</div>
+      <div class="passo-texto">
+        <strong>Abra o Claude Code</strong>
+        <span>Ainda na mesma pasta: <code>claude</code></span>
+      </div>
+    </li>
+    <li>
+      <div class="passo-num">5</div>
+      <div class="passo-texto">
+        <strong>Fale com ele como parceiro</strong>
+        <span>Nao como ferramenta. Nao como suporte. Como socio que conhece o seu negocio.</span>
+      </div>
+    </li>
+  </ul>
+
+  <!-- rodape -->
+  <div class="rodape">
+    <div class="rodape-marca">
+      <strong>Fabrica de Mentores</strong> — Allysson Silveira &copy; 2026
+    </div>
+    <div class="pill-data">zeus-anabol v1.0 · jun/2026</div>
+  </div>
+
+</div>
+
+<script>
+  const REPO_URL = 'https://github.com/allyssonsilveira/zeus-anabol';
+
+  function copiarLink() {
+    navigator.clipboard.writeText(REPO_URL).then(() => {
+      const btn = document.getElementById('btn-copiar');
+      btn.classList.add('copiado');
+      btn.textContent = 'Copiado!';
+      setTimeout(() => {
+        btn.classList.remove('copiado');
+        btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar link do repositorio`;
+      }, 2200);
+    });
+  }
+
+  function pad(n) { return String(n).padStart(2, '0'); }
+
+  function tick() {
+    const agora = new Date();
+    // Aula: hoje (16 jun 2026) as 20h40
+    const aula = new Date(agora);
+    aula.setHours(20, 40, 0, 0);
+
+    const diff = aula - agora;
+
+    const cdEl = document.getElementById('countdown');
+    const aoVivo = document.getElementById('ao-vivo');
+    const comecou = document.getElementById('aula-comecou');
+    const label = cdEl.previousElementSibling;
+
+    if (diff <= 0) {
+      // Aula comecou (janela de 2h)
+      const fimAula = new Date(aula);
+      fimAula.setHours(fimAula.getHours() + 2);
+
+      if (agora < fimAula) {
+        cdEl.style.display = 'none';
+        label.textContent = 'Aula em andamento';
+        aoVivo.style.display = 'inline-flex';
+      } else {
+        label.textContent = 'Aula encerrada';
+        cdEl.style.display = 'none';
+      }
+      return;
+    }
+
+    const h = Math.floor(diff / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+
+    document.getElementById('horas').textContent = pad(h);
+    document.getElementById('minutos').textContent = pad(m);
+    document.getElementById('segundos').textContent = pad(s);
+  }
+
+  tick();
+  setInterval(tick, 1000);
+</script>
+</body>
+</html>
