@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "whimsical": {
+      "type": "http",
+      "url": "https://mcp.whimsical.com/mcp"
+    },
+    "supabase": {
+      "type": "http",
+      "url": "https://mcp.supabase.com/mcp"
+    },
+    "notion": {
+      "type": "http",
+      "url": "https://mcp.notion.com/mcp"
+    }
+  }
+}
